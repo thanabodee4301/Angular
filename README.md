@@ -1,4 +1,6 @@
-# FirstApp
+# Lesson1 Getting-started-with-angular
+
+## [Article...Click](https://github.com/bamossza/getting-started-with-angular)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
