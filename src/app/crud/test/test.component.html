@@ -1,0 +1,30 @@
+<div class="page-header">
+  adfawdadawd
+</div>
+<ul>
+  <li>name : {{name}}</li>
+  <li>line : {{line}}</li>
+  <li>line2: {{line2}}</li>
+  <li>line3: {{line3}}</li>
+</ul>
+<form>
+  <div>
+<h2> Edit text </h2>
+<label for="name">Name:</label>
+<input type="text" [(ngModel)]="name" name = "name">
+</div>
+</form>
+<h2> Test Add data into Array variable </h2>
+<form (submit)="addData(inputData.value)">
+    <div>
+      Input some text :
+      <input type="text" #inputData  placeholder="Add your text here">
+    </div>
+    </form>
+    <div class="pager">
+      This is your Data in variable
+    </div>
+    <ul>
+      <li *ngFor="let item of data">{{item}}<button (click)="removeData(item)">delete</button></li>
+    </ul>    
+    

@@ -8,7 +8,8 @@
       <th>LeagueName</th>
       <th>Nation</th>
       <th>Federation</th>
-      
+      <th>Table</th>
+      <th>Top Scorer</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,8 @@
         <th align="center"><a routerLink="/home/{{item.league_slug}}" class="is-success">{{item.name}}</a></th>
         <th align="center">{{item.nation}}</th>
         <th align="center">{{item.federation}}</th>  
-            </tr>
+        <th align="center"><a routerLink="/home/{{item.league_slug}}" class="is-success">ดูตารางคะแนน</a></th>
+        <th align="center"><a routerLink="/home/{{item.league_slug}}/scorer" class="is-success">Top Scorers</a></th>
+      </tr>
     </tbody>
   </table>

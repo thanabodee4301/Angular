@@ -9,7 +9,6 @@ export class DataService {
 
   getLeagueData() {
     return this.http.get('/api/show')
-      //.map(res => res.json().leagues);
       .map(res => res.json());
   }
 
@@ -17,6 +16,14 @@ export class DataService {
     return this.http.get(`/api/show/${league_slug}`)
       .map(res => res.json());
 
+  }
+  scorer(league_sulg) {
+    return this.http.get(`/api/show/${league_sulg}/scorer`)
+      .map(res => res.json());
+  }
+    round(league, team) {
+      return this.http.get(`/api/${league}/${team}`)
+        .map(res => res.json());
   }
 }
 

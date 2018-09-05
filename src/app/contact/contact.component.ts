@@ -9,8 +9,6 @@
  export class ContactComponent implements OnInit {
   results: any = [];
   league_slug: any;
-  id: number ;
-
    constructor(private dataservice: DataService, private route: ActivatedRoute ) { }
  
    ngOnInit() {
@@ -22,5 +20,5 @@
      this.dataservice.standings(this.league_slug).subscribe(res => {
        this.results = res;
      });
-   }
+  }
 }
