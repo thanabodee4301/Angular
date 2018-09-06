@@ -10,16 +10,15 @@ import { DataService } from '../data.service';
 export class ScorerComponent implements OnInit {
 
   scorer: any [];
-  league: string;
+  league_slug: string;
 
   constructor(private router: ActivatedRoute, private dataservice: DataService ) { }
 
   ngOnInit() {
     this.router.params.subscribe(params => {
-      this.league = params['league_slug'];
-      console.log(this.league);
+      this.league_slug = params['league_slug'];
    });
-  this.dataservice.scorer(this.league).subscribe(res => {
+  this.dataservice.scorer(this.league_slug).subscribe(res => {
     this.scorer = res;
   });
 

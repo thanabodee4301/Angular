@@ -41,7 +41,8 @@ import { RoundComponent } from './round/round.component';
              {path: 'home/:league_slug/scorer' , component: ScorerComponent},
              {path: 'test', component: TestComponent },
              {path: 'sql', component : SqlComponent},
-             {path: 'home/:league_slug/:team', component : RoundComponent},
+             {path: 'round/:league_slug/:team_identifier', component : RoundComponent},
+             {path: 'detail/:league_slug/:position', component: LeaguedetailComponent}, 
              {path: '', component: HomeComponent},
              {path: '**', redirectTo: 'home', pathMatch: 'full'}
          ])

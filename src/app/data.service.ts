@@ -17,13 +17,17 @@ export class DataService {
       .map(res => res.json());
 
   }
-  scorer(league_sulg) {
-    return this.http.get(`/api/show/${league_sulg}/scorer`)
+  scorer(league_slug) {
+    return this.http.get(`/api/show/${league_slug}/scorer`)
       .map(res => res.json());
   }
-    round(league, team) {
-      return this.http.get(`/api/${league}/${team}`)
+    round(league_slug, team_identifier) {
+      return this.http.get(`/api/round/${league_slug}/${team_identifier}`)
         .map(res => res.json());
+  }
+  detail(league_slug, position){
+    return this.http.get(`/api/check/${league_slug}/${position}`)
+    .map(res => res.json());
   }
 }
 

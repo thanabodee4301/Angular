@@ -1,6 +1,11 @@
 <div class="page-header">
-  <center>ตารางคะแนนของลีค {{league_slug}} </center>
+  ตารางคะแนน {{league_slug}} 
 </div>
+<div>
+  <form>
+    
+  </form>
+  </div>
 <table class="table table-hover" border="2">
     <thead>
       <tr>
@@ -18,14 +23,14 @@
     <tbody>
       <tr *ngFor="let items of results">
         <th>{{items.position}}</th>
-        <th>{{items.team}}</th>
+        <th><a routerLink="/detail/{{league_slug}}/{{items.position}}" class="is-success">{{items.team}}</a></th>
         <th>{{items.overall.wins}}</th>
         <th>{{items.overall.draws}}</th>   
         <th>{{items.overall.losts}}</th>
         <th>{{items.overall.points}}</th>
         <th>{{items.overall.scores}}</th>
         <th>{{items.overall.conceded}}</th>
-        <th><a routerLink="/home/{{league_slug}}/{{items.team_identifier}}" class="is-success"></a>ดูผลการแข่งขัน</th>
+        <th><a routerLink="/round/{{league_slug}}/{{items.team_identifier}}" class="is-success">ดูผลการแข่งขัน</a></th>
       </tr>
     </tbody>
   </table>
