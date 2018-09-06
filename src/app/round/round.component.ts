@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
+import{ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-round',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./round.component.css']
 })
 export class RoundComponent implements OnInit {
-
-  constructor() { }
+result: string[];
+team : string;
+league: string;
+  constructor(private dataservice: DataService,private route: ActivatedRoute) { }
 
   ngOnInit() {
+      
   }
 
 }

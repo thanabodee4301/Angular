@@ -1,15 +1,6 @@
 const express = require('express');
 const router =express.Router();
-var unirest= require('unirest');
-var mongoClient = require('mongodb').MongoClient
-var url = 'mongodb://localhost:27017/myproject'; 
-var mysql = require('mysql');
-var con = mysql.createConnection({
-    host:"192.168.1.85",
-    user:"juniordev",
-    password:"tbdadmin",
-    database:"dev_db"
-})
+var unirest= require('unirest'); 
 /////////////////////////////////////// SoccerAPI/////////////////////////////////////////////////////////////
 router.get('/show',(req,res)=>{
      unirest.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues")
@@ -19,6 +10,7 @@ router.get('/show',(req,res)=>{
         res.send(result.body.data.leagues);
     });
 });
+
 router.get('/show/:league_slug',(req,res)=>{
 var id =req.params.league_slug;
 console.log(id);
@@ -40,6 +32,7 @@ console.log(x);
     });
     });
 });
+
 router.get('/show/:league_slug/:team_identifier')
 var league = req.params.league_slug;
 var team   = req.params.league_sulg;
@@ -49,6 +42,7 @@ unirest.get(`https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/league
 .end(function(result){
     res.send(result.body.data.rounds);
 });
+
 //////////////////////////////////////////   SQL  /////////////////////////////////////////////
 router.post('sql',(req,res)=>{
 var sql = "select * from yourtext"

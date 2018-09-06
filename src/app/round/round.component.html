@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1 align="center">ผลการแข่งขัน </h1>
+</div>
+<table class="table table-hover" border="2">
+    <thead>
+      <tr>
+      <th>นัดที่</th>
+      <th>Home</th>
+      <th>match_result</th>
+      <th>away_team</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of result; let i=index;">
+        <th align="center">{{i+1}}</th>
+        <th align="center">{{item.home_team}}</th>
+        <th align="center">{{item.match_result}}</th>
+        <th align="center">{{item.away_team}}</th>  
+      </tr>
+    </tbody>
+  </table>

@@ -11,11 +11,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended:true
 }));
-
-
-
 app.use(morgan('tiny'));
 app.use('/api',require('./server/api.js'));
+
 
 const server =app.listen(4444,()=>{
 const port = server.address().port;
