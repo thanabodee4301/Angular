@@ -1,21 +1,28 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-var morgan = require('morgan');
+// const express = require('express');
+// const path = require('path');
+// const bodyParser = require('body-parser');
+// var morgan = require('morgan');
+// var session = require('express-session');
+// var cookieParser = require('cookie-parser');
 
 
+// const app=express();
 
-const app=express();
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
+//     extended:true
+// }));
+// app.use(morgan('tiny'));
+// app.use('/api',require('./server/api.js'));
+// app.use(cookieParser());
+// app.use(session({ resave: true ,secret: '123456' , saveUninitialized: true}));
+// module.exports = app;
+var express = require('express');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended:true
-}));
-app.use(morgan('tiny'));
-app.use('/api',require('./server/api.js'));
+const config = require('./server.config');
+const route = require('./server.route');
 
-
-const server =app.listen(8081,()=>{
-const port = server.address().port;
-console.log("Server is running at localhost:",port);
-})
+var app = express();
+config(app);
+route(app);
+module.exports = app;

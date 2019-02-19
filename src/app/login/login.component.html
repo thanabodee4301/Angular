@@ -1,0 +1,15 @@
+    <div class="login-page">
+    <!-- <div class="wrap-login100">
+        <span class="login100-form-title" style="position: relative;" >
+           Itopplus Login
+          </span>
+    </div> -->
+      <div class="form">
+          <form class="login-form"(ngSubmit)="onLoginSubmit()">
+            <input type="text" name="userName" [(ngModel)]="userName" placeholder="username"/>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="password"/>
+            <button id="btSubmit" type="submit" class="btn btn-primary" style="width:100%;">เข้าสู่ระบบ</button>
+          </form>
+        </div>
+      </div>
+      

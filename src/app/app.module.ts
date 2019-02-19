@@ -9,12 +9,14 @@ import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {RouterModule} from '@angular/router';
 import {DataService} from './data.service';
+import {LoginService} from './login/login.service';
 import { ScorerComponent } from './scorer/scorer.component';
 import { TestComponent } from './crud/test/test.component';
 import { MongoComponent } from './db/mongo/mongo.component';
 import { SqlComponent } from './sql/sql.component';
 import { LeaguedetailComponent } from './leaguedetail/leaguedetail.component';
 import { RoundComponent } from './round/round.component';
+import { LoginComponent } from './login/login.component';
 
  @NgModule({
      declarations: [
@@ -27,7 +29,8 @@ import { RoundComponent } from './round/round.component';
          MongoComponent,
          SqlComponent,
          LeaguedetailComponent,
-         RoundComponent
+         RoundComponent,
+         LoginComponent
      ],
      imports: [
          BrowserModule,
@@ -43,11 +46,12 @@ import { RoundComponent } from './round/round.component';
              {path: 'sql', component : SqlComponent},
              {path: 'round/:league_slug/:team_identifier', component : RoundComponent},
              {path: 'detail/:league_slug/:position', component: LeaguedetailComponent}, 
-             {path: '', component: HomeComponent},
-             {path: '**', redirectTo: 'home', pathMatch: 'full'}
+             {path: 'login', component: LoginComponent},
+             {path: '', component: LoginComponent},
+             {path: '**', redirectTo: 'login', pathMatch: 'full'}
          ])
      ],
-     providers: [DataService],
+     providers: [DataService,LoginService],
      bootstrap: [AppComponent]
  })
  export class AppModule {}

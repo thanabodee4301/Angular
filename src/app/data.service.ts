@@ -15,7 +15,6 @@ export class DataService {
   standings(league_slug) {
     return this.http.get(`/api/show/${league_slug}`)
       .map(res => res.json());
-
   }
   scorer(league_slug) {
     return this.http.get(`/api/show/${league_slug}/scorer`)
