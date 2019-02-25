@@ -12,20 +12,19 @@ import {Globals} from '../global'
 export class LoginComponent implements OnInit {
   private userName:string = '';
   private password:string = '';
-  detail: string[]
+  detail: string[];
   loginParams = {
     userName: '',
     password: '',
-} 
+}
 
-  constructor(public loginService: LoginService, public router: Router,private Globals:Globals) { }
+  constructor(public loginService: LoginService, public router: Router) { }
 
   ngOnInit() {
   }
   onLoginSubmit(){
-    console.log(this.userName);
    if(this.userName == '' || this.password == ''){
-    alert('ควย');
+    alert('กรอกมาก่อน');
    } else {
      this.loginParams.userName = this.userName;
      this.loginParams.password = this.password;
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
         alert('User name หรือ password ผิด กรุณาลองใหม่อีกครั้ง');
       } else {
         alert('OK');
-        this.Globals.permission = res.permission;
       }
      })
    }

@@ -7,15 +7,14 @@
 
 
 // const app=express();
-
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({
 //     extended:true
 // }));
+// app.use(session({ resave: true ,secret: '123456' , saveUninitialized: true}));
 // app.use(morgan('tiny'));
 // app.use('/api',require('./server/api.js'));
 // app.use(cookieParser());
-// app.use(session({ resave: true ,secret: '123456' , saveUninitialized: true}));
 // module.exports = app;
 var express = require('express');
 

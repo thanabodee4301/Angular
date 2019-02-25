@@ -5,8 +5,13 @@ var _ = require('underscore');
 
 router.post('/loginchk', function(req, res) {
     var test = chkLogin(req);
+    console.log('sawassdeeee',req.session.UserName);
     res.send(test);
 });
+router.get('/checkpermission', function(req,res) {
+    console.log(req.session.UserName);
+    res.send(req.session.userName);
+})
 function chkLogin(req) {
     var userName = req.body.userName;
     var password = req.body.password;

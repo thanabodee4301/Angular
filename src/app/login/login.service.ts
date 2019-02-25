@@ -7,7 +7,7 @@ export class LoginService {
   constructor(private Http: Http, private router: Router) { }
   checklogin(userName){
     return this.Http
-            .post(`api/checklogin/loginchk`, userName)
+            .post(`/api/checklogin/loginchk`, userName)
             .map(res => res.json());
   }
   checklogined(userName){
