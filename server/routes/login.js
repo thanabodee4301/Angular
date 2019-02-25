@@ -8,7 +8,8 @@ router.post('/loginchk', function(req, res) {
     console.log('sawassdeeee',req.session.UserName);
     res.send(test);
 });
-router.get('/checkpermission', function(req,res) {
+router.post('/checkpermission', function(req,res) {
+    console.log('kuy');
     console.log(req.session.UserName);
     res.send(req.session.userName);
 })

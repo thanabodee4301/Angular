@@ -7,7 +7,7 @@ export class LoginService {
   constructor(private Http: Http, private router: Router) { }
   checklogin(userName){
     return this.Http
-            .post(`/api/checklogin/loginchk`, userName)
+            .post(`/checklogin/loginchk`, userName)
             .map(res => res.json());
   }
   checklogined(userName){
@@ -16,5 +16,9 @@ export class LoginService {
     } else {
       return 'notlogin'
     }
+  }
+  test() {
+    return this.Http.post(`/checklogin/checkpermission`, {})
+    .map(res => res.json());
   }
 }

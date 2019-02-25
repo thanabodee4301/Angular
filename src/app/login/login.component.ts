@@ -37,4 +37,14 @@ export class LoginComponent implements OnInit {
      })
    }
   }
+  test(){
+    console.log('test');
+    this.loginService.test().subscribe(res => {
+      if(res.status != 'sucess') {
+        alert('User name หรือ password ผิด กรุณาลองใหม่อีกครั้ง');
+      } else {
+        alert('OK');
+      }
+     })
+  }
 }

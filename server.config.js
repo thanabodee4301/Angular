@@ -25,7 +25,7 @@ module.exports = app => {
         })
     );
 app.use(cookieParser());
-app.use('/api',require('./server/api.js'));
+// app.use('/api',require('./server/api.js'));
 const server = app.listen(8081,()=>{
 const port = server.address().port;
 console.log("Server is running at localhost:",port);
